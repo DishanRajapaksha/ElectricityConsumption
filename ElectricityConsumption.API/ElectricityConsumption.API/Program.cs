@@ -48,10 +48,7 @@ var app = builder.Build();
 
 #region Logging, Swagger and Health
 
-if (!app.Environment.IsProduction())
-{
-	app.UseDeveloperExceptionPage();
-}
+app.UseExceptionHandler(!app.Environment.IsProduction() ? "/error-development" : "/error");
 
 app.UseSwagger();
 app.UseSwaggerUI(x =>

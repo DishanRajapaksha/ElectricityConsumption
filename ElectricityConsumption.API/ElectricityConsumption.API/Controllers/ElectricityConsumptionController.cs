@@ -18,8 +18,10 @@ public class ElectricityConsumptionController : ControllerBase
 	}
 	
 	[HttpGet]
-	public async Task<ActionResult> GetClaims([FromQuery] MeterUsageReadRequest request)
+	public async Task<ActionResult> GetConsumption([FromQuery] MeterUsageReadRequest request)
 	{
+		_logger.LogInformation("Get Consumption Request");
+		
 		var response = await _electricityConsumptionService.GetConsumption(request);
 		
 		return Ok(response);
