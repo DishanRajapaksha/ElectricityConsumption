@@ -12,7 +12,7 @@ The frontend application is a Single Page Application built using Angular. It is
 
 API application is built using .NET 6 and follows the guidelines of the [Clean Architecture](https://github.com/ardalis/CleanArchitecture) pattern.
 
-ElectricityConsumption.API project has the controllers, validators for the API requests and the health check service. 
+ElectricityConsumption.API project has the controllers, validators for the API requests and the health check service. It also has an Error Controller as a global error handler. Fluent Validation library is used to validate the incoming requests.
 
 In the ElectricityConsumption.API.Core project, the shared services are implemented. For example, Protos and the service used to fetch data from the GRCP server. This project is acting as a client to get data from the GRCP server. The GRCP client is injected using dependency injection and client factory instead of creating a new client on the spot. It is using OpenAPI to document its API endpoints and the Logger to log information to Application Insights.
 
