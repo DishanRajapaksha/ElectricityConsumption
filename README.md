@@ -19,6 +19,7 @@ In the ElectricityConsumption.API.Core project, the shared services are implemen
 ElectricityConsumption.API.Infrastructure project act as the point to call the external GRC service and is registering the GRCP client and the handler to be used in the Core project. 
 
 - Grpc.Net.Client and Grpc.Net.ClientFactory libraries are used to implement the GRCP client.
+- Fluent Validation to validate requests.
 
 **GRCP Server**
 
@@ -31,7 +32,7 @@ ElectricityConsumption.Server.Infrastructure project implements the infrastructu
 Since the initial data is provided using a CSV file, in the project startup, that CSV file is read and its content seeded into the SQLite database using the database Configuration service.
 
 - gRPC for .NET library is used to implement the GRPC server. 
-- EF Core and SQLite are used to implement the database infrastructure. 
+- EF Core and SQLite libraries are used to implement the database infrastructure. 
 
 **Docker**
 
