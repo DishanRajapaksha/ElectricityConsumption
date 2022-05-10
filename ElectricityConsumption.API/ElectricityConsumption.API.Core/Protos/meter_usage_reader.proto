@@ -1,0 +1,42 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "ElectricityConsumption.Protos";
+
+package electricity_meter_reader;
+
+message MeterReading {
+  string time = 1;
+  double meter_usage = 2;
+}
+
+message MeterUsageReadRequest {
+  int32 page_index = 1;
+  int32 page_size = 2;
+}
+
+message MeterUsageResponse {
+  repeated MeterReading usage = 1;
+  int64 page_index = 2;
+  int64 page_size = 3;
+  int64 page_total = 4;
+  int64 total = 5;
+}
+
+// Health Checks
+message MeterUsageReaderHealthCheckRequest {
+  string service = 1;
+}
+
+message MeterUsageReaderHealthCheckResponse {
+  enum MeterUsageReaderServingStatus {
+    UNKNOWN = 0;
+    SERVING = 1;
+    NOT_SERVING = 2;
+  }
+  MeterUsageReaderServingStatus status = 1;
+}
+
+service MeterUsageReader {
+  rpc ReadMeter (MeterUsageReadRequest) returns (MeterUsageResponse);
+  rpc CheckMeterUsageReaderHealth(MeterUsageReaderHealthCheckRequest) returns (MeterUsageReaderHealthCheckResponse);
+}

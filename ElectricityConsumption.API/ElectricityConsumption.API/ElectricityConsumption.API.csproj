@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>97819dce-a855-46e9-a764-f8deb7687cc5</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.Net.Client.Web" Version="2.45.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+	<PackageReference Include="FluentValidation.AspNetCore" Version="11.0.1" />
+	<PackageReference Include="Microsoft.ApplicationInsights" Version="2.20.0" />
+	<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.20.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ElectricityConsumption.API.Core\ElectricityConsumption.API.Core.csproj" />
+    <ProjectReference Include="..\ElectricityConsumption.API.Infrastructure\ElectricityConsumption.API.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
