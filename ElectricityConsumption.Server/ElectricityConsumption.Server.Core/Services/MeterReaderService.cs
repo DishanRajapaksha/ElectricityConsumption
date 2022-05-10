@@ -3,6 +3,7 @@ using ElectricityConsumption.Server.Core.Interfaces.Services;
 using ElectricityConsumption.Protos;
 
 namespace ElectricityConsumption.Server.Core.Services;
+
 public class MeterReaderService : IMeterReaderService
 {
     private readonly IMeterUsageRepository _meterUsageRepository;
