@@ -1,8 +1,8 @@
 **Deployed links**
 
 - [Web Application](https://consumptionweb.z6.web.core.windows.net)
-- [REST API](https://electricity-consumption-server-as.azurewebsites.net)
-- [GRCP Server](https://electricity-consumption-api-as.azurewebsites.net)
+- [REST API](https://electricity-consumption-api-as.azurewebsites.net)
+- [GRCP Server](https://electricity-consumption-server-as.azurewebsites.net)
 
 **Web Application**
 
